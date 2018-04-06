@@ -6,32 +6,32 @@ export default class App extends React.Component {
     return (
       <View style={styles.container}>
         <Image
-          style={{ height: DeviceHeight, width: DeviceWidth }}
+          style={{ flex: 1, height: DeviceHeight, width: DeviceWidth }}
           source={require("./images/1.png")}
           resizeMode="contain"
         />
         <Image
-          style={{ height: DeviceHeight, width: DeviceWidth }}
+          style={{ flex: 1, height: DeviceHeight, width: DeviceWidth }}
           source={require("./images/2.png")}
           resizeMode="contain"
         />
         <Image
-          style={{ height: DeviceHeight, width: DeviceWidth }}
+          style={{ flex: 1, height: DeviceHeight, width: DeviceWidth }}
           source={require("./images/3.png")}
           resizeMode="contain"
         />
         <Image
-          style={{ height: DeviceHeight, width: DeviceWidth }}
+          style={{ flex: 1, height: DeviceHeight, width: DeviceWidth }}
           source={require("./images/4.png")}
           resizeMode="contain"
         />
         <Image
-          style={{ height: DeviceHeight, width: DeviceWidth }}
+          style={{ flex: 1, height: DeviceHeight, width: DeviceWidth }}
           source={require("./images/5.png")}
           resizeMode="contain"
         />
         <Image
-          style={{ height: DeviceHeight, width: DeviceWidth }}
+          style={{ flex: 1, height: DeviceHeight, width: DeviceWidth }}
           source={require("./images/6.png")}
           resizeMode="contain"
         />
@@ -46,9 +46,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
-    flexDirection: "row"
+    flexDirection: "column"
   }
 });
 
-const DeviceWidth = Dimensions.get("window").width / 6;
-const DeviceHeight = Dimensions.get("window").height / 6;
+const DeviceWidth = Dimensions.get("window").width / 4;
+const DeviceHeight = Dimensions.get("window").height / 4;
