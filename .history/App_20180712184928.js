@@ -15,11 +15,10 @@ export default class App extends React.Component {
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#ecf0f1",
+    backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
-    flexDirection: "column",
-    
+    flexDirection: "column"
   }
 });
 

@@ -7,8 +7,7 @@ import {
   Button,
   Text,
   TouchableOpacity,
-  TouchableHighlight,
-  Platform
+  TouchableHighlight
 } from "react-native";
 import { images } from "./constants";
 
@@ -69,28 +68,13 @@ export default class Dice extends React.Component {
     const dice = this.state.rolledDice;
     const rolledDice = dice.map((value, index) => {
       const held = this.state.keep.includes(index)
-        ? {
-            width: 100,
-            height: 100,
-            backgroundColor: "blue",
-            borderRadius: 10,
-            ...Platform.select({
-              ios: {
-                shadowColor: "rgba(0,0,0, .7)",
-                shadowOffset: { height: 0, width: 0 },
-                shadowOpacity: 1,
-                shadowRadius: 5
-              },
-              android: {
-                elevation: 5
-              }
-            })
-          }
+        ? { elevation:4,
+          shadowOffset: { width: 5, height: 5 },
+          shadowColor: "blue",
+          shadowOpacity: 0.5,
+          shadowRadius: 10, }
         : {};
-      const diceImageStyle = Object.assign(
-        { flex: 1, height: DeviceHeight, width: DeviceWidth },
-        held
-      );
+        const diceImageStyle = Object.assign( {flex: 1, height: DeviceHeight, width: DeviceWidth}, held)
       return (
         <TouchableOpacity
           style={diceImageStyle}
@@ -108,14 +92,7 @@ export default class Dice extends React.Component {
       );
     });
     return (
-      <View
-        style={{
-          flex: 1,
-          alignItems: "center",
-          justifyContent: "center",
-          backgroundColor: "#ecf0f1"
-        }}
-      >
+      <View>
         {rolledDice}
         <Button title="Roll" onPress={this.Roll} />
       </View>

@@ -6,9 +6,7 @@ import {
   View,
   Button,
   Text,
-  TouchableOpacity,
-  TouchableHighlight,
-  Platform
+  TouchableOpacity
 } from "react-native";
 import { images } from "./constants";
 
@@ -29,7 +27,7 @@ export default class Dice extends React.Component {
       let dice = [];
       for (let i = 0; i < 5; i++) {
         if (this.state.keep.includes(i)) {
-          dice.push(this.state.rolledDice[i]);
+          dice.push(this.state.dice[i]);
         } else {
           dice.push(this.Math());
         }
@@ -65,57 +63,53 @@ export default class Dice extends React.Component {
     this.setState({ rolledDice: [...this.state.rolledDice, newDie] });
   };
 
+  Dice = [
+    <Image
+      style={{ flex: 1, height: DeviceHeight, width: DeviceWidth }}
+      source={images.One}
+      resizeMode="contain"
+    />,
+    <Image
+      style={{ flex: 1, height: DeviceHeight, width: DeviceWidth }}
+      source={images.Two}
+      resizeMode="contain"
+    />,
+    <Image
+      style={{ flex: 1, height: DeviceHeight, width: DeviceWidth }}
+      source={images.Three}
+      resizeMode="contain"
+    />,
+    <Image
+      style={{ flex: 1, height: DeviceHeight, width: DeviceWidth }}
+      source={images.Four}
+      resizeMode="contain"
+    />,
+    <Image
+      style={{ flex: 1, height: DeviceHeight, width: DeviceWidth }}
+      source={images.Five}
+      resizeMode="contain"
+    />,
+    <Image
+      style={{ flex: 1, height: DeviceHeight, width: DeviceWidth }}
+      source={images.Six}
+      resizeMode="contain"
+    />
+  ];
+
   render() {
     const dice = this.state.rolledDice;
     const rolledDice = dice.map((value, index) => {
-      const held = this.state.keep.includes(index)
-        ? {
-            width: 100,
-            height: 100,
-            backgroundColor: "blue",
-            borderRadius: 10,
-            ...Platform.select({
-              ios: {
-                shadowColor: "rgba(0,0,0, .7)",
-                shadowOffset: { height: 0, width: 0 },
-                shadowOpacity: 1,
-                shadowRadius: 5
-              },
-              android: {
-                elevation: 5
-              }
-            })
-          }
-        : {};
-      const diceImageStyle = Object.assign(
-        { flex: 1, height: DeviceHeight, width: DeviceWidth },
-        held
-      );
       return (
-        <TouchableOpacity
-          style={diceImageStyle}
-          key={index}
-          onPress={() => {
-            this.Hold(index);
-          }}
-        >
+        
           <Image
             style={{ flex: 1, height: DeviceHeight, width: DeviceWidth }}
             source={this.AssignImages(value)}
             resizeMode="contain"
           />
-        </TouchableOpacity>
       );
     });
     return (
-      <View
-        style={{
-          flex: 1,
-          alignItems: "center",
-          justifyContent: "center",
-          backgroundColor: "#ecf0f1"
-        }}
-      >
+      <View>
         {rolledDice}
         <Button title="Roll" onPress={this.Roll} />
       </View>

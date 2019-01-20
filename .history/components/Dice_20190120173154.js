@@ -69,22 +69,20 @@ export default class Dice extends React.Component {
     const dice = this.state.rolledDice;
     const rolledDice = dice.map((value, index) => {
       const held = this.state.keep.includes(index)
-        ? {
-            width: 100,
-            height: 100,
-            backgroundColor: "blue",
-            borderRadius: 10,
-            ...Platform.select({
-              ios: {
-                shadowColor: "rgba(0,0,0, .7)",
-                shadowOffset: { height: 0, width: 0 },
-                shadowOpacity: 1,
-                shadowRadius: 5
-              },
-              android: {
-                elevation: 5
-              }
-            })
+        ? {width:100,
+          height:100,
+          backgroundColor:'blue',
+          borderRadius:10,
+          ...Platform.select({
+            ios: {
+              shadowColor: 'rgba(0,0,0, .7)',
+              shadowOffset: { height:0, width: 0 },
+              shadowOpacity: 1,
+              shadowRadius: 5,
+            },
+            android: {
+              elevation: 5
+            },
           }
         : {};
       const diceImageStyle = Object.assign(
@@ -108,14 +106,7 @@ export default class Dice extends React.Component {
       );
     });
     return (
-      <View
-        style={{
-          flex: 1,
-          alignItems: "center",
-          justifyContent: "center",
-          backgroundColor: "#ecf0f1"
-        }}
-      >
+      <View>
         {rolledDice}
         <Button title="Roll" onPress={this.Roll} />
       </View>

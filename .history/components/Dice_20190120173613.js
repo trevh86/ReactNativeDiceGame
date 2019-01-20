@@ -110,9 +110,6 @@ export default class Dice extends React.Component {
     return (
       <View
         style={{
-          flex: 1,
-          alignItems: "center",
-          justifyContent: "center",
           backgroundColor: "#ecf0f1"
         }}
       >
