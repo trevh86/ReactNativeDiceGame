@@ -113,5 +113,5 @@ export default class Dice extends React.Component {
   }
 }
 
-// const DeviceWidth = Dimensions.get("window").width / 4;
-// const DeviceHeight = Dimensions.get("window").height / 4;
+const DeviceWidth = Dimensions.get("window").width / 4;
+const DeviceHeight = Dimensions.get("window").height / 4;

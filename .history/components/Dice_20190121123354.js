@@ -70,27 +70,24 @@ export default class Dice extends React.Component {
     const rolledDice = dice.map((value, index) => {
       const held = this.state.keep.includes(index)
         ? {
-            opacity: 0.2
+            borderColor: "blue"
           }
         : {};
       const diceImageStyle = Object.assign(
-        {
-          flex: 1
-        },
+        { 
+          flex: 1, borderWidth: 3, borderColor: 'white',  },
         held
       );
       return (
         <TouchableOpacity
-          style={{ flex: 1 }}
+          style={diceImageStyle}
           key={index}
           onPress={() => {
             this.Hold(index);
           }}
         >
-          {/* Giving Image borderWidth causing weird black bar width. Giving TouchableOpacity 
-        borderWidth leaves whitespace between border and the image. */}
           <Image
-            style={diceImageStyle}
+            style={{flex: 1, opacity: 0.1}}
             source={this.AssignImages(value)}
             resizeMode="contain"
           />
@@ -113,5 +110,5 @@ export default class Dice extends React.Component {
   }
 }
 
-// const DeviceWidth = Dimensions.get("window").width / 4;
-// const DeviceHeight = Dimensions.get("window").height / 4;
+const DeviceWidth = Dimensions.get("window").width / 4;
+const DeviceHeight = Dimensions.get("window").height / 4;
