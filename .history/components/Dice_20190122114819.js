@@ -73,9 +73,7 @@ export default class Dice extends React.Component {
         : {};
       const diceImageStyle = Object.assign(
         {
-          flex: 1,
-          height: undefined,
-          width: undefined
+          flex: 1
         },
         held
       );
@@ -105,28 +103,15 @@ export default class Dice extends React.Component {
           flexDirection: "column"
         }}
       >
-        <View
+
+      <View
           style={{
             flex: 3,
             justifyContent: "flex-end",
-            flexDirection: "row",
-            backgroundColor: "blue"
-          }}
-        />
-
-        <View
-          style={{
-            flex: 1,
-            justifyContent: "space-around",
-            flexDirection: "row",
-            backgroundColor: "red"
+            flexDirection: "row"
           }}
         >
-          {rolledDice}
-        </View>
-
-        <View style={{ backgroundColor: "grey" }}>
-          <Text style={{ textAlign: "center", fontSize: 20 }}>Rolled Dice</Text>
+          
         </View>
 
         <View
@@ -139,7 +124,22 @@ export default class Dice extends React.Component {
           {rolledDice}
         </View>
 
-        <View style={{ width: 100, alignSelf: "center", marginBottom: 30 }}>
+        <View style={{backgroundColor: 'grey', paddingVertical: 5}}>
+        <Text style={{textAlign: 'center', textAlignVertical: 'center', textDecorationStyle:'double', fontSize: 20}}>Rolled Dice</Text>
+        </View>
+
+        <View
+          style={{
+            flex: 1,
+            justifyContent: "flex-end",
+            flexDirection: "row",
+            flexWrap: 'wrap'
+          }}
+        >
+          {rolledDice}
+        </View>
+
+        <View style={{flex: 0.1, padding: 100, paddingBottom: 75}}>
           <Button title="Roll" onPress={this.Roll} />
         </View>
       </View>

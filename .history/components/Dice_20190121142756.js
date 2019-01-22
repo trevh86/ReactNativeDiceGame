@@ -6,7 +6,10 @@ import {
   View,
   Button,
   Text,
-  TouchableWithoutFeedback
+  TouchableOpacity,
+  TouchableHighlight,
+  Table,
+  Platform
 } from "react-native";
 import { images } from "./constants";
 
@@ -73,14 +76,12 @@ export default class Dice extends React.Component {
         : {};
       const diceImageStyle = Object.assign(
         {
-          flex: 1,
-          height: undefined,
-          width: undefined
+          flex: 1
         },
         held
       );
       return (
-        <TouchableWithoutFeedback
+        <TouchableOpacity
           style={{ flex: 1 }}
           key={index}
           onPress={() => {
@@ -94,54 +95,21 @@ export default class Dice extends React.Component {
             source={this.AssignImages(value)}
             resizeMode="contain"
           />
-        </TouchableWithoutFeedback>
+        </TouchableOpacity>
       );
     });
     return (
       <View
         style={{
+          margin: 50,
           flex: 1,
           justifyContent: "flex-end",
           flexDirection: "column"
         }}
       >
-        <View
-          style={{
-            flex: 3,
-            justifyContent: "flex-end",
-            flexDirection: "row",
-            backgroundColor: "blue"
-          }}
-        />
-
-        <View
-          style={{
-            flex: 1,
-            justifyContent: "space-around",
-            flexDirection: "row",
-            backgroundColor: "red"
-          }}
-        >
-          {rolledDice}
-        </View>
-
-        <View style={{ backgroundColor: "grey" }}>
-          <Text style={{ textAlign: "center", fontSize: 20 }}>Rolled Dice</Text>
-        </View>
-
-        <View
-          style={{
-            flex: 1,
-            justifyContent: "flex-end",
-            flexDirection: "row"
-          }}
-        >
-          {rolledDice}
-        </View>
-
-        <View style={{ width: 100, alignSelf: "center", marginBottom: 30 }}>
-          <Button title="Roll" onPress={this.Roll} />
-        </View>
+        {rolledDice}
+        <Button title="Roll" onPress={this.Roll} />
+        <Table></Table>
       </View>
     );
   }

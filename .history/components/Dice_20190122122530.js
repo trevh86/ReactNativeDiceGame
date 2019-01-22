@@ -133,13 +133,15 @@ export default class Dice extends React.Component {
           style={{
             flex: 1,
             justifyContent: "flex-end",
-            flexDirection: "row"
+            flexDirection: "row",
+            flexWrap: "wrap",
+            backgroundColor: "blue"
           }}
         >
           {rolledDice}
         </View>
 
-        <View style={{ width: 100, alignSelf: "center", marginBottom: 30 }}>
+        <View style={{ flex: 1, maxWidth: 100 }}>
           <Button title="Roll" onPress={this.Roll} />
         </View>
       </View>

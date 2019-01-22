@@ -125,7 +125,7 @@ export default class Dice extends React.Component {
           {rolledDice}
         </View>
 
-        <View style={{ backgroundColor: "grey" }}>
+        <View style={{ flex: 1, backgroundColor: "grey" }}>
           <Text style={{ textAlign: "center", fontSize: 20 }}>Rolled Dice</Text>
         </View>
 
@@ -133,13 +133,14 @@ export default class Dice extends React.Component {
           style={{
             flex: 1,
             justifyContent: "flex-end",
-            flexDirection: "row"
+            flexDirection: "row",
+            backgroundColor: "blue"
           }}
         >
           {rolledDice}
         </View>
 
-        <View style={{ width: 100, alignSelf: "center", marginBottom: 30 }}>
+        <View style={{ flex: 1, maxWidth: 100 }}>
           <Button title="Roll" onPress={this.Roll} />
         </View>
       </View>

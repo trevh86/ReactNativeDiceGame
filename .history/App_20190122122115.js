@@ -16,7 +16,7 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#ffffff",
-    justifyContent: 'space-between',
+    justifyContent: 'flex-end',
     flexDirection: "column",
     backgroundColor: 'green'
     

@@ -16,9 +16,9 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#ffffff",
-    justifyContent: 'space-between',
-    flexDirection: "column",
-    backgroundColor: 'green'
+    alignItems: "center",
+    justifyContent: 'flex-end',
+    flexDirection: "row",
     
   }
 });
