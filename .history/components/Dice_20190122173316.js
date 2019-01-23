@@ -20,8 +20,6 @@ export default class Dice extends React.Component {
     };
   }
 
-  static navigationOptions = {title:'Game'}
-
   Math = () => Math.floor(Math.random() * 6 + 1);
 
   Roll = () => {
@@ -107,10 +105,6 @@ export default class Dice extends React.Component {
           flexDirection: "column"
         }}
       >
-        <View style={{ backgroundColor: "grey" }}>
-          <Text style={{ textAlign: "center", fontSize: 20 }}>Score</Text>
-        </View>
-
         <View
           style={{
             flex: 3,
@@ -120,7 +114,7 @@ export default class Dice extends React.Component {
         />
 
         <View style={{ backgroundColor: "grey" }}>
-          <Text style={{ textAlign: "center", fontSize: 20 }}>Held Dice</Text>
+          <Text style={{ textAlign: "center", fontSize: 20 }}>Rolled Dice</Text>
         </View>
 
         <View
@@ -129,7 +123,9 @@ export default class Dice extends React.Component {
             justifyContent: "space-around",
             flexDirection: "row"
           }}
-        />
+        >
+          {rolledDice}
+        </View>
 
         <View style={{ backgroundColor: "grey" }}>
           <Text style={{ textAlign: "center", fontSize: 20 }}>Rolled Dice</Text>

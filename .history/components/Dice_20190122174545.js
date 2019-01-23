@@ -20,8 +20,6 @@ export default class Dice extends React.Component {
     };
   }
 
-  static navigationOptions = {title:'Game'}
-
   Math = () => Math.floor(Math.random() * 6 + 1);
 
   Roll = () => {

@@ -9,6 +9,7 @@ import {
   TouchableWithoutFeedback
 } from "react-native";
 import { images } from "./constants";
+import AppContainer from "../App.js"
 
 export default class Dice extends React.Component {
   constructor(props) {

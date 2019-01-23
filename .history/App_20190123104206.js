@@ -1,26 +1,32 @@
 import React from "react";
 import { StyleSheet, Text, View, Button } from "react-native";
 import Dice from "./components/Dice";
-import Home from "./components/Home";
 import { createStackNavigator, createAppContainer } from "react-navigation";
 
-export default class App extends React.Component {
+class HomeScreen extends React.Component {
   render() {
-    return <AppContainer />;
+    return (
+      <View style={styles.container}>
+        <Button onPress={() => navigate('Dice')} title="Game" />
+      </View>
+    );
   }
 }
 
-const AppNavigator = createStackNavigator(
-  {
-    Home: { screen: Home },
-    Game: { screen: Dice }
+const AppNavigator = createStackNavigator({
+  Home: {
+    screen: HomeScreen
   },
-  {
-    initialRoutName: "Home"
+  Game: {
+    screen: Dice
   }
+},
+{
+  initialRoutName: 'Home'
+}
 );
 
-const AppContainer = createAppContainer(AppNavigator);
+export default createAppContainer(AppNavigator);
 
 export const styles = StyleSheet.create({
   container: {

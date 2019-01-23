@@ -107,6 +107,7 @@ export default class Dice extends React.Component {
           flexDirection: "column"
         }}
       >
+      <StatusBar hidden={route.statusBarHidden} />
         <View style={{ backgroundColor: "grey" }}>
           <Text style={{ textAlign: "center", fontSize: 20 }}>Score</Text>
         </View>
